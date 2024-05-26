@@ -251,7 +251,7 @@ search_input.addEventListener("keypress", (e) => {
 // for (const key of person) {
 // console.log(key, "and", person[key]);
 // console.log(person);
-// console.log(key.age); //không phải key.age mà là person.age trong for-in
+// console.log(key.age); //không phải key.age mà là person.age trong for-in//saii
 // console.log(person.age); //không chạy được của for-of//câu này chạy dược trong for-in nhưng với giá trị age cố định
 // }
 //for-of không chạy đưuọc trong trường hợp này
@@ -304,3 +304,129 @@ search_input.addEventListener("keypress", (e) => {
 // };
 
 // console.log(bp(2));
+
+//bài tập leson 22/05/2024
+//filter==map :trả về một mảng
+// viết arow function để kiểm tra từ khóa world
+// let a = "Hello world";
+// const contain = (string, key) => string.includes(key);
+// console.log(contain("Hello world", "world")); //dấu => là return
+////////////////////////////////////
+// const a = ["one", "two", "three"];
+// const them = "Number :";
+// const add = (ar, them) => {
+//   return ar.map(
+// (i) => `${them} ${i}`//đây cũng là một arow function nên xử lý ngoặc {} như bình thường
+// (i)=> {return `${them} ${i}`}//nếu có {} thì phải có return
+//nếu để thêm { } thì phải có thêm return
+// console.log(them + i);
+//   );
+// };
+// console.log(a);
+// console.log(them);
+// console.log(add(a, them));
+// console.log(add(["one", "two", "three"], "Number :"));
+// add(["one", "two", "three"], "Number :");
+// shift + alt +f ==format lại==prettier
+//ctrl + ` : ở terminal
+//bài 4
+// const a = [1, 2, 3, 4];
+// const b = (a) => {
+//   return a.map((i) => i * 2);
+// };
+// console.log(b(a));
+// const o = [1, 2, 3, 4, 5, 6];
+
+// const b = (ar) => {
+//   return ar.filter((i) => i % 2 !== 0);
+// };
+// console.log(b(o));
+
+//ctrl +enter :xuống dòng khi không cần trỏ xuống cuối hàng
+//ctrl +shift +enter: chừa khoảng trên
+//alt + lên/xuống
+//bài6
+// const employees = [
+//   { id: 1, name: "John", workingDays: 22 },
+//   { id: 2, name: "Jane", workingDays: 20 },
+//   { id: 3, name: "Mark", workingDays: 25 },
+// ];
+// let p = 0;
+// employees.map((i, o) => (p += i.workingDays));
+// console.log(p);
+// const initialValue = 0;
+// cách 1
+// const j = employees.reduce(
+// (accumulator, currentValue) => accumulator + currentValue.workingDays, //curentValue <=> item trong map (gía trị trong map)
+// initialValue //accumulator tùy vào initialvalue giá trị là 0 giống như p ở trên và curentvalue là giá trị hiện tại
+//nếu initialValue ==1 thì accumulator ==1
+// );
+// console.log(j);
+// cách 2
+// const work = () => {
+// return employees.reduce(
+// (ac, currentValue) => ac + currentValue.workingDays, //curentValue <=> item trong map (gía trị trong map)
+//   initialValue
+// );
+// };
+// console.log(work());//phải có dấu () chứ không được viết console.log(work);
+//bài 7
+// const employees = [
+//   { id: 1, name: "John", salary: 2000 },
+//   { id: 2, name: "Jane", salary: 2500 },
+//   { id: 3, name: "Mark", salary: 3000 },
+// ];
+
+// const hi = () => {};
+//làm tiếp.... ở nhà
+
+//bài 10
+// let tasks = [
+//   {
+//     name: "Hoàn thành bài tập JavaScript",
+//     description: "Làm xong bài tập về Array và Object",
+//     completed: false,
+//   },
+//   { name: "Đọc sách", description: "Đọc xong chương 3", completed: true },
+//   {
+//     name: "Đi mua hàng",
+//     description: "Mua thêm thức ăn cho tuần",
+//     completed: false,
+//   },
+// ];
+
+// const add = (name, des, com) => {
+//   return tasks.push({ name: name, description: des, completed: com });
+// };
+// add("hello", "no no", false);
+// console.log(tasks);
+
+// const track = (name) => {
+//   return tasks.map((item) => {
+// phải có return khi sử dụng {} ở trong map
+//     if (item.name.includes(name)) {
+//       item.completed = true;
+//     } else {
+//       console.log("fail");
+//     }
+//   });
+// };
+
+// track("Đi mua hàng");
+// console.log(tasks);
+
+// const sorts = (i) => {
+//   if (i == "asc") {
+// return tasks.sort((a, b) => a.name.localeCompare(b.name)); //nếu như chấm a.name thì cũng phải chấm b.name trong các trường hợp sử dụng built-in function như sort
+//   } else if (i == "dsc") {
+//     return tasks.sort((a, b) => b.name.localeCompare(a.name));
+//   }
+// };
+
+// sorts("asc");
+// console.log(tasks);
+
+// const items = ["réservé", "premier", "communiqué", "café", "adieu", "éclair"];
+// items.sort((a, b) => a.localeCompare(b));
+
+// console.log(items);

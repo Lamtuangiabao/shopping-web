@@ -14,7 +14,7 @@ login_form.addEventListener("submit", function login(e) {
     if (email_value == user.email && password_value == user.password) {
       const toast = document.getElementById("toast");
       const toast_bs = bootstrap.Toast.getOrCreateInstance(toast);
-      toast_bs.show();
+      toast_bs.show(); //sử dụng boottrap để làm thông báo
       show_noti("Đăng nhập thành công", true);
 
       // location = "../index.html"; //nếu để thì sẽ chưa kịp xem thông báo thì nó sẽ chuyển trang
